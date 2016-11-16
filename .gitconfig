@@ -1,0 +1,15 @@
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[user]
+	name = Artur Mullakhmetov
+	email = mullakhmetov.art@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+	editor = vim
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	stash-unapply = !git stash show -p | git apply -R
