@@ -21,6 +21,7 @@ brew install openssh
 brew install openssl
 brew install redis
 brew install sqlite
+brew install diffstatic
 
 # apps
 brew install --install --cask install 

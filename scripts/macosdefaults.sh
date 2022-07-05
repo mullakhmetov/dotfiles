@@ -9,6 +9,7 @@ defaults write com.apple.dock magnification -int 0
 defaults write com.apple.dock mineffect -string scale
 defaults write com.apple.dock "minimize-to-application" -int 1
 defaults write com.apple.dock "show-recents" -int 0
+defaults write com.apple.Dock autohide-time-modifier -float 0
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "$HOME/Desktop"

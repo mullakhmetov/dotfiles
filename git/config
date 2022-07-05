@@ -1,0 +1,40 @@
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[user]
+	name = Artur Mullakhmetov
+	email = mullakhmetov.art@gmail.com
+[core]
+	autocrlf = false
+	safecrlf = false
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[alias]
+	co = checkout
+	cob = checkout -b
+	com = checkout master
+	br = branch
+	st = status
+	poh = push origin HEAD
+	wip = commit -am "WIP"
+	amend = commit -a --amend
+	sync = !git fetch -p && git rebase origin/master
+        stash-unapply = !git stash show -p | git apply -R
+        stash-untracked = "!f() {    \
+        git stash;               \
+        git stash -u;            \
+        git stash pop stash@{1}; \
+	dft = difftool
+}; f"
+[diff]
+        tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+        difftool = true
+[merge]
+	conflictStyle = diff3

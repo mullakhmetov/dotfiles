@@ -1,0 +1,14 @@
+# Load: Configurations
+source $HOME/.zsh/config
+
+# Load: Plugins
+source $HOME/.zsh/plugins
+
+# Load: OH-MY-ZSH
+source $ZSH/oh-my-zsh.sh
+
+# Load: ALIASES
+source $HOME/.zsh/aliases
+
+# Load: FUNCCTIONS
+source $HOME/.zsh/functions

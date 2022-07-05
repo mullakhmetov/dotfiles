@@ -1,0 +1,8 @@
+*~
+._*
+.DS_Store
+.idea
+.vscode
+*.pyc
+node_modules
+npm-debug.log
