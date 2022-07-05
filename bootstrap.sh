@@ -20,6 +20,8 @@ ln zsh/plugins ~/.zsh/plugins
 ln zsh/aliases ~/.zsh/aliases
 ln zsh/functions ~/.zsh/functions
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 
 # tmux
 mv ~/.tmux.conf ~/tmux.conf.copy 2> /dev/null
