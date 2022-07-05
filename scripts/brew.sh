@@ -23,19 +23,19 @@ brew install redis
 brew install sqlite
 
 # apps
-brew cask install 
-brew cask firefox
-brew cask google-chrome
-brew cask spotify
-brew cask sublime-text3
-brew cask iterm2
-brew cask telegram
-brew cask slack
-brew cask notion
-brew cask vscode
-brew cask postman
-brew cask todoist
-brew cask 1password
-brew cask anki
-brew cask docker
-brew cask viscosity
+brew install --install --cask install 
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask spotify
+brew install --cask sublime-text
+brew install --cask iterm2
+brew install --cask telegram
+brew install --cask slack
+brew install --cask notion
+brew install --cask vscode
+brew install --cask postman
+brew install --cask todoist
+brew install --cask 1password
+brew install --cask anki
+brew install --cask docker
+brew install --cask viscosity
