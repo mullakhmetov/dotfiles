@@ -5,8 +5,8 @@ brew upgrade
 brew install coreutils
 brew install moreutils
 brew install findutils
-brew install gnu-sed --with-default-names
-brew install vim --override-system-vi
+brew install gnu-sed
+brew install vim
 brew install git
 brew install wget
 brew install grep
