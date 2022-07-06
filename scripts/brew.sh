@@ -33,8 +33,8 @@ brew install --cask sublime-text
 brew install --cask iterm2
 brew install --cask telegram
 brew install --cask slack
-brew install --cask notion
-brew install --cask vscode
+brew install --cask eotion
+brew install --cask visual-studio-code
 brew install --cask postman
 brew install --cask todoist
 brew install --cask 1password
