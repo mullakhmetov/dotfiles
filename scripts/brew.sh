@@ -23,6 +23,9 @@ brew install redis
 brew install sqlite
 brew install diffstatic
 brew install lsd
+brew install docker-compose
+brew install nodejs # superdao
+brew instapp pnpm # superdao
 
 # apps
 brew install --install --cask install 
