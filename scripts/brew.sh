@@ -24,8 +24,12 @@ brew install sqlite
 brew install diffstatic
 brew install lsd
 brew install docker-compose
+brew install postgres
+brew install pgcli
+
 brew install nodejs # superdao
 brew instapp pnpm # superdao
+brew install typescript # superdao
 
 # apps
 brew install --install --cask install 
