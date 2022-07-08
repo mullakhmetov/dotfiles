@@ -26,6 +26,7 @@ brew install lsd
 brew install docker-compose
 brew install postgres
 brew install pgcli
+brew install kubectl
 
 brew install nodejs # superdao
 brew instapp pnpm # superdao
