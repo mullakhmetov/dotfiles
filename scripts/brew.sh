@@ -49,3 +49,4 @@ brew install --cask 1password
 brew install --cask anki
 brew install --cask docker
 brew install --cask viscosity
+brew install --cask lens
