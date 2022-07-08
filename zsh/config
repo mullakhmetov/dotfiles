@@ -9,6 +9,9 @@ ZSH_THEME="robbyrussell"
 
 # User configuration
 
+# Homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # fasd
 eval "$(fasd --init posix-alias zsh-hook)"
 
@@ -16,5 +19,4 @@ eval "$(fasd --init posix-alias zsh-hook)"
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
-# Homebrew
-eval $(/opt/homebrew/bin/brew shellenv)
+
