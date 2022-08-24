@@ -19,4 +19,8 @@ eval "$(fasd --init posix-alias zsh-hook)"
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
+# pnpm
+export PNPM_HOME=$HOME/.pnpm
+PATH=$PNPM_HOME:$PATH
+
 
