@@ -48,4 +48,29 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Show language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
+# Finder
+defaults write com.apple.Finder FXPreferredViewStyle -string "clmv"
+defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+defaults write com.apple.frameworks.diskimages skip-verify -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
