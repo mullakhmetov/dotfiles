@@ -48,6 +48,16 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Show language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
+# Reduce Mission Control and Spaces animation
+defaults write com.apple.dock expose-animation-duration -float 0
+defaults write com.apple.dock springboard-show-duration -float 0
+defaults write com.apple.dock springboard-hide-duration -float 0
+defaults write com.apple.dock springboard-page-duration -float 0
+
+# Mission control settings
+defaults write com.apple.dock mru-spaces -bool false
+defaults write -g AppleSpacesSwitchOnActivate -bool false
+
 # Finder
 defaults write com.apple.Finder FXPreferredViewStyle -string "clmv"
 defaults write com.apple.finder AppleShowAllFiles -bool true
