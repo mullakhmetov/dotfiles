@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+selected_dir=$(fff)
+
+if [ -n "$selected_dir" ]; then
+	tmux new-window -c "$selected_dir"
+fi

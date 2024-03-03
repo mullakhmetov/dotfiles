@@ -1,1 +1,8 @@
-path+=$HOME/Workspace/google-cloud-sdk/bin
+#!bin/zsh
+
+BASE_DIR="$(dirname "$0")"
+directory=$(readlink ${BASE_DIR}/shell_scripts)
+# Add directory to PATH if not already added
+if [[ ":$PATH:" != *":$directory:"* ]]; then
+	export PATH="$directory:$PATH"
+fi

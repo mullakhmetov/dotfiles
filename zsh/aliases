@@ -17,4 +17,10 @@ alias ...='cd ../../'
 # LSD
 alias ls='lsd'
 
-alias sd=superdao	
+# tmux
+alias td='tmux new-session -A -s dev'
+alias tp='tmux new-session -A -s prod'
+alias ta='tmux a'
+
+# fzf
+alias cf='cd $(fff)'

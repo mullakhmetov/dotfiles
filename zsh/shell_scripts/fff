@@ -1,0 +1,3 @@
+#!/bin/zsh
+#
+find ~/Workspace -type d -not -path "*/.mypy_cache/*" -not -path "*/.git/*" -not -path "*/site-packages/*" -not -path "*/node_modules/*" | fzf

@@ -1,3 +1,4 @@
+set -g default-command "${SHELL}"
 # remap prefix from 'C-b' to 'C-a'
 unbind C-b
 set-option -g prefix C-q
@@ -22,6 +23,13 @@ set-option -g allow-rename off
 set -g base-index 1
 setw -g pane-base-index 1
 
+# Start window with current path
+bind c new-window -c "#{pane_current_path}"
+
+# Kill panes & windows without confirmation
+bind-key & kill-window
+bind-key x kill-pane
+
 
 #####################
 ######## TPM ########
@@ -31,6 +39,8 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-sessionist'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @continuum-restore 'off'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -94,12 +104,15 @@ set -g pane-active-border-style bg=colour236,fg=colour51
 # }
 # The statusbar {
 
+set -g pane-border-format ''
 set -g status-position bottom
 set -g status-style bg=colour234,fg=colour137,dim
 set -g status-left ''
-set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right '' 
 set -g status-right-length 50
 set -g status-left-length 20
+if-shell "[ #{session_name} = 'prod' ]" 'set-option -g status-style bg=colour1'
+set-hook -g client-session-changed 'source-file ~/.tmux.conf'
 
 setw -g window-status-current-style fg=colour81,bg=colour238,bold
 setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '

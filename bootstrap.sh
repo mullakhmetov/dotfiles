@@ -24,6 +24,7 @@ ln -s $PWD/zsh/config $HOME/.zsh/config
 ln -s $PWD/zsh/plugins $HOME/.zsh/plugins
 ln -s $PWD/zsh/aliases $HOME/.zsh/aliases
 ln -s $PWD/zsh/functions $HOME/.zsh/functions
+ln -s $PWD/zsh/shell_scripts $HOME/.zsh/shell_scripts
 ln -s $PWD/zsh/path_updates $HOME/.zsh/path_updates
 
 echo 'installing some zsh plugins'

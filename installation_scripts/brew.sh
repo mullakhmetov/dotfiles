@@ -41,7 +41,7 @@ brew install --cask sublime-text
 brew install --cask iterm2
 brew install --cask telegram
 brew install --cask slack
-brew install --cask eotion
+brew install --cask notion
 brew install --cask visual-studio-code
 brew install --cask postman
 brew install --cask todoist
@@ -50,3 +50,4 @@ brew install --cask anki
 brew install --cask docker
 brew install --cask viscosity
 brew install --cask lens
+brew install --cask raycast
