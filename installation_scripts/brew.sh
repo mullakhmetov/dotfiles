@@ -36,12 +36,13 @@ brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask spotify
 brew install --cask sublime-text
-brew install --cask iterm2
+brew install --cask ghostty
 brew install --cask telegram
-brew install --cask slack
+brew install --cask discord
 brew install --cask notion
-brew install --cask visual-studio-code
 brew install --cask postman
+brew install --cask obsidian
+brew install --cask outline
 brew install --cask todoist
 brew install --cask 1password
 brew install --cask anki
