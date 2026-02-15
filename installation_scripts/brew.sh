@@ -15,7 +15,7 @@ brew install jq
 brew install difftastic
 brew install qcachegrind
 brew install nmap
-brew install fasd
+brew install zoxide
 brew install tmux
 brew install openssh
 brew install openssl

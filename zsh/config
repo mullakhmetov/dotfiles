@@ -12,8 +12,8 @@ ZSH_THEME="robbyrussell"
 # Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
-# fasd
-eval "$(fasd --init posix-alias zsh-hook)"
+# zoxide
+eval "$(zoxide init zsh)"
 
 # docker
 fpath=(~/.zsh/completion $fpath)
