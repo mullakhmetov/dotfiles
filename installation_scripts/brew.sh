@@ -21,7 +21,6 @@ brew install openssh
 brew install openssl
 brew install redis
 brew install sqlite
-brew install diffstatic
 brew install lsd
 brew install docker-compose
 brew install postgres
@@ -29,11 +28,10 @@ brew install pgcli
 brew install kubectl
 
 brew install nodejs # superdao
-brew instapp pnpm # superdao
+brew install pnpm # superdao
 brew install typescript # superdao
 
 # apps
-brew install --install --cask install 
 brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask spotify

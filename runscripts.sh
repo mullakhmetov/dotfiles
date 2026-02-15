@@ -1,8 +1,8 @@
-for FILE in `find installation_scripts`
+for FILE in `find installation_scripts -type f -name "*.sh"`
 do
-	[ -f "$FILE" ] && source "$FILE"
+	source "$FILE"
 done
 
-echo "scripts autorun completed\n";
+echo "scripts autorun completed"
 
 
