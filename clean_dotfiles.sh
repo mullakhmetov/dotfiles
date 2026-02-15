@@ -1,3 +1,4 @@
+#!/bin/bash
 read -p "Deleting all dotfiles. Are you sure? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

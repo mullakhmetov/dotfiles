@@ -5,8 +5,8 @@ echo 'copying git dotfiles'
 mv ~/.gitconfig ~/gitconfig.copy 2> /dev/null
 mv ~/.gitignore_global ~/gitignore_global.copy 2> /dev/null
 
-ln $PWD/git/config $HOME/.gitconfig
-ln $PWD/git/ignore $HOME/gitignore_global
+ln -s $PWD/git/config $HOME/.gitconfig
+ln -s $PWD/git/ignore $HOME/.gitignore_global
 
 
 # zsh
@@ -18,7 +18,7 @@ mv ~/.zsh ~/zsh_copy 2> /dev/null
 mv ~/.zshrc ~/zshrc_copy 2> /dev/null
 
 ln -s $PWD/zsh/zshrc $HOME/.zshrc
-mkdir ~/.zsh
+mkdir -p ~/.zsh
 
 ln -s $PWD/zsh/config $HOME/.zsh/config
 ln -s $PWD/zsh/plugins $HOME/.zsh/plugins
