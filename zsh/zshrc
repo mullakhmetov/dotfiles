@@ -16,5 +16,7 @@ source $HOME/.zsh/functions
 # Load: PATH updates
 source $HOME/.zsh/path_updates
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export LANG=en_US.UTF-8
+eval "$(atuin init zsh --disable-up-arrow)"

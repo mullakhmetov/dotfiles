@@ -24,3 +24,16 @@ alias ta='tmux a'
 
 # fzf
 alias cf='cd $(fff)'
+
+# neovim
+alias vi='nvim'
+alias vim='nvim'
+
+# git
+alias gl='pretty_git_log'
+alias gst='git status'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias ga='git amend'
+alias gd='git diff'
+alias gph='git poh'

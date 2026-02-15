@@ -6,3 +6,23 @@ directory=$(readlink ${BASE_DIR}/shell_scripts)
 if [[ ":$PATH:" != *":$directory:"* ]]; then
 	export PATH="$directory:$PATH"
 fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Go
+export GOPATH=$HOME/Workspace/golang
+export GOBIN=$GOPATH/bin
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH=$PATH:$GOROOT/bin
+export GOPROXY=direct
+export PATH="$PATH:$(go env GOPATH)/bin"
+export GOTOOLCHAIN=auto
+
+# Database clients
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+
+# Local binaries
+export PATH="$HOME/.local/bin:$PATH"

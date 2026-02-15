@@ -22,5 +22,3 @@ autoload -Uz compinit && compinit -i
 # pnpm
 export PNPM_HOME=$HOME/.pnpm
 PATH=$PNPM_HOME:$PATH
-
-
