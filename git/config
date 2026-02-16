@@ -10,22 +10,15 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 [alias]
-	dft = difftool
 	co = checkout
-	cob = checkout -b
-	com = checkout master
-	br = branch
+    sc = switch -c
+	com = checkout main
 	st = status
 	poh = push origin HEAD
 	wip = commit -am "WIP"
 	amend = commit -a --amend
-	sync = !git fetch -p && git rebase origin/master
-        stash-unapply = !git stash show -p | git apply -R
-        stash-untracked = "!f() {    \
-        git stash;               \
-        git stash -u;            \
-        git stash pop stash@{1}; \
-}; f"
+    rom = rebase origin/main
+    from = !git fetch origin && git rebase origin/main
 [diff]
         tool = difftastic
 
@@ -34,7 +27,15 @@
 
 [difftool "difftastic"]
         cmd = difft "$LOCAL" "$REMOTE"
+[difftool "vimdiff"]
+        cmd = vimdiff "$LOCAL" "$REMOTE"
 [pager]
         difftool = true
 [merge]
-	conflictStyle = diff3
+        tool = vimdiff
+    	conflictstyle = diff3
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

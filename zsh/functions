@@ -36,9 +36,68 @@ SUBJECT="%s"
 FORMAT="$HASH $RELATIVE_TIME{$AUTHOR{$REFS $SUBJECT"
 
 pretty_git_log() {
-  git log --graph --pretty="tformat:$FORMAT" $* |
+  command git log --graph --pretty="tformat:$FORMAT" $* |
   column -t -s '{' |
   less -XRS --quit-if-one-screen
+}
+
+# Git alias reminder wrapper
+git() {
+    local cmd=$1
+    local suggestion=""
+
+    # Map git commands to their aliases
+    case "$cmd" in
+        status) suggestion="gst" ;;
+        st) suggestion="gst" ;;
+        commit)
+            if [[ "$2" == "--amend" || "$2" == "-a" && "$3" == "--amend" ]]; then
+                suggestion="gca"
+            elif [[ "$2" == "-am" && "$3" == "WIP" ]]; then
+                suggestion="git wip"
+            else
+                suggestion="gc"
+            fi
+            ;;
+        diff) suggestion="gd" ;;
+        difftool) suggestion="git dft" ;;
+        log) suggestion="gl (or 'git hs' for compact view)" ;;
+        checkout)
+            if [[ "$2" == "main" ]]; then
+                suggestion="git com"
+            else
+                suggestion="git co"
+            fi
+            ;;
+        switch)
+            if [[ "$2" == "-c" ]]; then
+                suggestion="git sc"
+            fi
+            ;;
+        branch) suggestion="git br" ;;
+        push)
+            if [[ "$*" =~ "origin HEAD" || "$2" == "origin" && "$3" == "HEAD" ]]; then
+                suggestion="gph"
+            fi
+            ;;
+        poh) suggestion="gph" ;;
+        rebase)
+            if [[ "$2" == "origin/main" ]]; then
+                suggestion="git rom"
+            fi
+            ;;
+        amend) suggestion="ga" ;;
+    esac
+
+    # Show warning if alias exists
+    if [[ -n "$suggestion" ]]; then
+        echo "\033[1;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" >&2
+        echo "\033[1;31m⚠️  USE ALIAS: \033[1;32m$suggestion\033[0m" >&2
+        echo "\033[1;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" >&2
+    fi
+
+    # Execute the actual git command
+    command git "$@"
 }
 
 # Claude Code
