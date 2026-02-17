@@ -21,7 +21,8 @@ alias vi='nvim'
 alias vim='nvim'
 
 # git
-alias gl='pretty_git_log'
+alias gl="command git log"
+alias gpl='pretty_git_log'
 alias gst='command git status'
 alias gc='command git commit'
 alias gca='command git commit --amend'
