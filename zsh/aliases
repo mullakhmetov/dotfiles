@@ -9,7 +9,7 @@ alias ...='cd ../../'
 if [[ "$(uname)" == "Darwin" ]]; then
   alias ls='lsd'
 else
-  alias ls='lsd --no-icons'
+  alias ls='lsd --icon=never'
 fi
 
 # tmux
