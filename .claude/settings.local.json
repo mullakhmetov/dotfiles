@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Skill(commit)",
+      "Bash(/Users/a.mullakhmetov/Workspace/dotfiles/bootstrap.sh:*)",
+      "Bash(bash /Users/a.mullakhmetov/Workspace/dotfiles/bootstrap.sh)",
+      "Bash(bash -n /Users/a.mullakhmetov/Workspace/dotfiles/install/ubuntu.sh)"
+    ]
+  }
+}
