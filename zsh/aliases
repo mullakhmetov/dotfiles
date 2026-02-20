@@ -5,8 +5,12 @@ alias zi='z -i'  # interactive selection
 alias ..='cd ..'
 alias ...='cd ../../'
 
-# LSD
-alias ls='lsd'
+# LSD (no icons on Linux — terminals rarely have nerd fonts)
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias ls='lsd'
+else
+  alias ls='lsd --no-icons'
+fi
 
 # tmux
 t() { tmux attach 2>/dev/null || tmux new-session -s main }
