@@ -27,9 +27,9 @@ brew install postgres
 brew install pgcli
 brew install kubectl
 
-brew install nodejs # superdao
-brew install pnpm # superdao
-brew install typescript # superdao
+brew install nodejs
+brew install pnpm
+brew install typescript
 
 # apps
 brew install --cask firefox
@@ -43,10 +43,8 @@ brew install --cask notion
 brew install --cask postman
 brew install --cask obsidian
 brew install --cask outline
-brew install --cask todoist
 brew install --cask 1password
 brew install --cask anki
-brew install --cask docker
-brew install --cask viscosity
+brew install --cask orbstack
 brew install --cask lens
 brew install --cask raycast
