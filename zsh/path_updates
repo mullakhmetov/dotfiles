@@ -36,3 +36,6 @@ fi
 
 # Local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# zoxide (needs PATH fully set up first)
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"

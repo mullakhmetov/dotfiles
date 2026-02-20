@@ -12,9 +12,6 @@ ZSH_THEME="robbyrussell"
 # Homebrew (macOS only)
 [[ "$(uname)" == "Darwin" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# zoxide
-eval "$(zoxide init zsh)"
-
 # docker
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
