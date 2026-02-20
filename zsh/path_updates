@@ -1,4 +1,4 @@
-#!bin/zsh
+#!/bin/zsh
 
 BASE_DIR="$(dirname "$0")"
 directory=$(readlink ${BASE_DIR}/shell_scripts)
@@ -26,7 +26,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export GOROOT="$(brew --prefix golang)/libexec"
   export PATH="$PATH:$GOROOT/bin"
 fi
-export PATH="$PATH:$(go env GOPATH 2>/dev/null)/bin"
+export PATH="$PATH:$GOBIN"
 
 # Database clients (macOS Homebrew paths)
 if [[ "$(uname)" == "Darwin" ]]; then
