@@ -20,15 +20,19 @@ pyenv() {
 # Go
 export GOPATH=$HOME/Workspace/golang
 export GOBIN=$GOPATH/bin
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH=$PATH:$GOROOT/bin
 export GOPROXY=direct
-export PATH="$PATH:$(go env GOPATH)/bin"
 export GOTOOLCHAIN=auto
+if [[ "$(uname)" == "Darwin" ]]; then
+  export GOROOT="$(brew --prefix golang)/libexec"
+  export PATH=$PATH:$GOROOT/bin
+fi
+export PATH="$PATH:$(go env GOPATH)/bin" 2>/dev/null || true
 
-# Database clients
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+# Database clients (macOS Homebrew paths)
+if [[ "$(uname)" == "Darwin" ]]; then
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+  export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+fi
 
 # Local binaries
 export PATH="$HOME/.local/bin:$PATH"
