@@ -24,9 +24,9 @@ export GOPROXY=direct
 export GOTOOLCHAIN=auto
 if [[ "$(uname)" == "Darwin" ]]; then
   export GOROOT="$(brew --prefix golang)/libexec"
-  export PATH=$PATH:$GOROOT/bin
+  export PATH="$PATH:$GOROOT/bin"
 fi
-export PATH="$PATH:$(go env GOPATH)/bin" 2>/dev/null || true
+export PATH="$PATH:$(go env GOPATH 2>/dev/null)/bin"
 
 # Database clients (macOS Homebrew paths)
 if [[ "$(uname)" == "Darwin" ]]; then
