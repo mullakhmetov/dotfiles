@@ -60,7 +60,7 @@ set -g update-environment "SSH_CONNECTION SSH_CLIENT SSH_TTY"
 
 # Purple on remote (SSH), dark grey on local
 if-shell '[ -n "$SSH_CONNECTION" ]' \
-  'set -g status-style bg=colour30,fg=colour137,dim' \
+  'set -g status-style bg=colour30,fg=colour255,bold' \
   'set -g status-style bg=colour234,fg=colour137,dim'
 set -g status-left ''
 set -g status-right ' #h | %H:%M '
