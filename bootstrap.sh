@@ -1,46 +1,23 @@
 #!/bin/sh
+set -e
 
-# git
-echo 'copying git dotfiles'
-mv ~/.gitconfig ~/gitconfig.copy 2> /dev/null
-mv ~/.gitignore_global ~/gitignore_global.copy 2> /dev/null
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-ln -s $PWD/git/config $HOME/.gitconfig
-ln -s $PWD/git/ignore $HOME/.gitignore_global
+echo '==> Linking git config'
+ln -sf "$DOTFILES_DIR/git/config" "$HOME/.gitconfig"
+ln -sf "$DOTFILES_DIR/git/ignore" "$HOME/.gitignore_global"
 
+echo '==> Linking zsh config'
+ln -sf "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
+mkdir -p "$HOME/.zsh"
+ln -sf "$DOTFILES_DIR/zsh/config"        "$HOME/.zsh/config"
+ln -sf "$DOTFILES_DIR/zsh/plugins"       "$HOME/.zsh/plugins"
+ln -sf "$DOTFILES_DIR/zsh/aliases"       "$HOME/.zsh/aliases"
+ln -sf "$DOTFILES_DIR/zsh/functions"     "$HOME/.zsh/functions"
+ln -sf "$DOTFILES_DIR/zsh/shell_scripts" "$HOME/.zsh/shell_scripts"
+ln -sf "$DOTFILES_DIR/zsh/path_updates"  "$HOME/.zsh/path_updates"
 
-# zsh
-echo 'installing oh-my-zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+echo '==> Linking tmux config'
+ln -sf "$DOTFILES_DIR/tmux/conf" "$HOME/.tmux.conf"
 
-echo 'copying zsh dotfiles'
-mv ~/.zsh ~/zsh_copy 2> /dev/null
-mv ~/.zshrc ~/zshrc_copy 2> /dev/null
-
-ln -s $PWD/zsh/zshrc $HOME/.zshrc
-mkdir -p ~/.zsh
-
-ln -s $PWD/zsh/config $HOME/.zsh/config
-ln -s $PWD/zsh/plugins $HOME/.zsh/plugins
-ln -s $PWD/zsh/aliases $HOME/.zsh/aliases
-ln -s $PWD/zsh/functions $HOME/.zsh/functions
-ln -s $PWD/zsh/shell_scripts $HOME/.zsh/shell_scripts
-ln -s $PWD/zsh/path_updates $HOME/.zsh/path_updates
-
-echo 'installing some zsh plugins'
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-
-# tmux
-echo 'copying tmux dotfiles'
-mv ~/.tmux.conf ~/tmux.conf.copy 2> /dev/null
-ln -s $PWD/tmux/conf $HOME/.tmux.conf
-
-
-# scripts
-# echo 'running scripts'
-# source runscripts.sh
-
-chmod a+x clean_dotfiles.sh
-
+echo '==> Done. Reload your shell.'
