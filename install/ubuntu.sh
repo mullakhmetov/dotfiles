@@ -58,7 +58,7 @@ if confirm "Install shell tools? (zsh, oh-my-zsh, fzf, zoxide, lsd, atuin)"; the
   fi
 
   echo '==> Setting zsh as default shell'
-  chsh -s "$(which zsh)"
+  sudo chsh -s "$(which zsh)" "$USER"
 
 fi
 
