@@ -9,6 +9,7 @@ alias ...='cd ../../'
 alias ls='lsd'
 
 # tmux
+t() { tmux attach 2>/dev/null || tmux new-session -s main }
 alias td='tmux new-session -A -s dev'
 alias tp='tmux new-session -A -s prod'
 alias ta='tmux a'
