@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eo pipefail
 
 echo '==> Ensuring Homebrew is installed'
 if ! command -v brew &>/dev/null; then
@@ -14,6 +14,7 @@ brew install \
   redis sqlite lsd docker-compose \
   postgres pgcli kubectl \
   nodejs pnpm typescript \
+  atuin \
   golang
 
 echo '==> Installing oh-my-zsh'
