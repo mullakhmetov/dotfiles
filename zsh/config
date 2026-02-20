@@ -1,16 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# gnu utils
-PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+# gnu utils (macOS only)
+[[ "$(uname)" == "Darwin" ]] && PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # User configuration
 
-# Homebrew
-eval $(/opt/homebrew/bin/brew shellenv)
+# Homebrew (macOS only)
+[[ "$(uname)" == "Darwin" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # zoxide
 eval "$(zoxide init zsh)"
