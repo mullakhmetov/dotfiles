@@ -15,13 +15,18 @@ if [[ ! -d "$HOME/.fzf" ]]; then
 fi
 
 echo '==> Installing zoxide'
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+if ! command -v zoxide &>/dev/null; then
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+fi
 
 echo '==> Installing lsd'
-LSD_VERSION="1.1.5"
-LSD_URL="https://github.com/lsd-rs/lsd/releases/download/v${LSD_VERSION}/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-curl -fsSL "$LSD_URL" | tar xz -C /tmp
-sudo mv "/tmp/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu/lsd" /usr/local/bin/lsd
+if [[ ! -x /usr/local/bin/lsd ]]; then
+  LSD_VERSION="1.1.5"
+  LSD_URL="https://github.com/lsd-rs/lsd/releases/download/v${LSD_VERSION}/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+  curl -fsSL "$LSD_URL" | tar xz -C /tmp
+  sudo mv "/tmp/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu/lsd" /usr/local/bin/lsd
+  rm -rf "/tmp/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu"
+fi
 
 echo '==> Installing atuin'
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
