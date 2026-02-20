@@ -1,12 +1,14 @@
 #!/bin/bash
-set -e
+set -eo pipefail
 
 echo '==> Installing apt packages'
 sudo apt-get update -qq
 sudo apt-get install -y zsh git tmux curl unzip
 
 echo '==> Installing neovim'
-sudo snap install neovim --classic
+if ! command -v nvim &>/dev/null; then
+  sudo snap install neovim --classic
+fi
 
 echo '==> Installing fzf'
 if [[ ! -d "$HOME/.fzf" ]]; then
@@ -22,14 +24,17 @@ fi
 echo '==> Installing lsd'
 if [[ ! -x /usr/local/bin/lsd ]]; then
   LSD_VERSION="1.1.5"
-  LSD_URL="https://github.com/lsd-rs/lsd/releases/download/v${LSD_VERSION}/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+  ARCH="$(uname -m)"
+  LSD_URL="https://github.com/lsd-rs/lsd/releases/download/v${LSD_VERSION}/lsd-v${LSD_VERSION}-${ARCH}-unknown-linux-gnu.tar.gz"
   curl -fsSL "$LSD_URL" | tar xz -C /tmp
-  sudo mv "/tmp/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu/lsd" /usr/local/bin/lsd
-  rm -rf "/tmp/lsd-v${LSD_VERSION}-x86_64-unknown-linux-gnu"
+  sudo mv "/tmp/lsd-v${LSD_VERSION}-${ARCH}-unknown-linux-gnu/lsd" /usr/local/bin/lsd
+  rm -rf "/tmp/lsd-v${LSD_VERSION}-${ARCH}-unknown-linux-gnu"
 fi
 
 echo '==> Installing atuin'
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+if ! command -v atuin &>/dev/null; then
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+fi
 
 echo '==> Installing oh-my-zsh'
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
