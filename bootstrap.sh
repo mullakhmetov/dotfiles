@@ -3,21 +3,23 @@ set -e
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+symlink() { rm -f "$2"; ln -s "$1" "$2"; }
+
 echo '==> Linking git config'
-ln -sf "$DOTFILES_DIR/git/config" "$HOME/.gitconfig"
-ln -sf "$DOTFILES_DIR/git/ignore" "$HOME/.gitignore_global"
+symlink "$DOTFILES_DIR/git/config" "$HOME/.gitconfig"
+symlink "$DOTFILES_DIR/git/ignore" "$HOME/.gitignore_global"
 
 echo '==> Linking zsh config'
-ln -sf "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
+symlink "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
 mkdir -p "$HOME/.zsh"
-ln -sf "$DOTFILES_DIR/zsh/config"        "$HOME/.zsh/config"
-ln -sf "$DOTFILES_DIR/zsh/plugins"       "$HOME/.zsh/plugins"
-ln -sf "$DOTFILES_DIR/zsh/aliases"       "$HOME/.zsh/aliases"
-ln -sf "$DOTFILES_DIR/zsh/functions"     "$HOME/.zsh/functions"
-ln -sf "$DOTFILES_DIR/zsh/shell_scripts" "$HOME/.zsh/shell_scripts"
-ln -sf "$DOTFILES_DIR/zsh/path_updates"  "$HOME/.zsh/path_updates"
+symlink "$DOTFILES_DIR/zsh/config"        "$HOME/.zsh/config"
+symlink "$DOTFILES_DIR/zsh/plugins"       "$HOME/.zsh/plugins"
+symlink "$DOTFILES_DIR/zsh/aliases"       "$HOME/.zsh/aliases"
+symlink "$DOTFILES_DIR/zsh/functions"     "$HOME/.zsh/functions"
+symlink "$DOTFILES_DIR/zsh/shell_scripts" "$HOME/.zsh/shell_scripts"
+symlink "$DOTFILES_DIR/zsh/path_updates"  "$HOME/.zsh/path_updates"
 
 echo '==> Linking tmux config'
-ln -sf "$DOTFILES_DIR/tmux/conf" "$HOME/.tmux.conf"
+symlink "$DOTFILES_DIR/tmux/conf" "$HOME/.tmux.conf"
 
 echo '==> Done. Reload your shell.'
