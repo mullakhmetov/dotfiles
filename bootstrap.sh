@@ -26,5 +26,6 @@ echo '==> Linking claude config'
 mkdir -p "$HOME/.claude"
 symlink "$DOTFILES_DIR/claude/settings.json"  "$HOME/.claude/settings.json"
 symlink "$DOTFILES_DIR/claude/statusline.sh" "$HOME/.claude/statusline.sh"
+symlink "$DOTFILES_DIR/claude/CLAUDE.md"     "$HOME/.claude/CLAUDE.md"
 
 echo '==> Done. Reload your shell.'
