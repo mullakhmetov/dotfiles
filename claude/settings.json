@@ -1,0 +1,103 @@
+{
+  "apiKeyHelper": "~/.claude/mirai_anthropic.sh",
+  "model": "opus",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true,
+  "permissions": {
+    "allow": [
+      "Read",
+      "WebFetch",
+      "WebSearch",
+
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git log)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch)",
+      "Bash(git branch *)",
+      "Bash(git remote)",
+      "Bash(git remote *)",
+      "Bash(git rev-parse *)",
+      "Bash(git ls-files *)",
+      "Bash(git blame *)",
+      "Bash(git tag)",
+      "Bash(git tag *)",
+      "Bash(git stash list)",
+
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(file *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(sed *)",
+      "Bash(awk *)",
+      "Bash(sort *)",
+      "Bash(uniq *)",
+      "Bash(tr *)",
+      "Bash(test *)",
+      "Bash(date)",
+      "Bash(date *)",
+
+      "Bash(jq *)",
+      "Bash(diff *)",
+      "Bash(stat *)",
+      "Bash(touch *)",
+      "Bash(cut *)",
+      "Bash(basename *)",
+      "Bash(dirname *)",
+      "Bash(realpath *)",
+      "Bash(readlink *)",
+      "Bash(env)",
+      "Bash(printenv *)",
+
+      "Bash(echo *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+
+      "Bash(find *)",
+      "Bash(ls)",
+      "Bash(ls *)",
+      "Bash(tree)",
+      "Bash(tree *)",
+
+      "Bash(which *)",
+      "Bash(command -v *)",
+      "Bash(type *)",
+      "Bash(pwd)",
+      "Bash(* --version)",
+      "Bash(* --help)",
+
+      "Bash(make *)",
+      "Bash(uv*)",
+      "Bash(docker *)",
+      "Bash(docker-compose *)",
+      "Bash(orb *)",
+      "Bash(orbctl *)",
+
+      "Bash(gh pr view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(gh run view *)",
+      "Bash(gh run list *)",
+      "Bash(gh run watch *)",
+      "Bash(gh repo view *)",
+      "Bash(gh release view *)",
+      "Bash(gh release list *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)"
+    ]
+  }
+}

@@ -22,4 +22,8 @@ symlink "$DOTFILES_DIR/zsh/path_updates"  "$HOME/.zsh/path_updates"
 echo '==> Linking tmux config'
 symlink "$DOTFILES_DIR/tmux/conf" "$HOME/.tmux.conf"
 
+echo '==> Linking claude config'
+mkdir -p "$HOME/.claude"
+symlink "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+
 echo '==> Done. Reload your shell.'
