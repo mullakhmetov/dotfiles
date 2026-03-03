@@ -38,6 +38,9 @@ bind c new-window -c "#{pane_current_path}"
 # Reload config
 bind r source-file ~/.tmux.conf
 
+# Fuzzy session switcher (overrides default `choose-tree`)
+bind s run-shell -b "~/.tmux/plugins/tmux-fzf/scripts/session.sh switch"
+
 # Kill without confirmation
 bind & kill-window
 bind x kill-pane
@@ -106,10 +109,10 @@ set-hook -g client-session-changed \
 # Plugins (TPM)
 # =============================================================================
 
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'sainnhe/tmux-fzf'
-set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @plugin 'tmux-plugins/tpm' # plugin manager
+set -g @plugin 'tmux-plugins/tmux-sensible' # sensible defaults
+set -g @plugin 'sainnhe/tmux-fzf' # fuzzy finder for sessions, windows, panes
+set -g @plugin 'fcsonline/tmux-thumbs' # copy text from terminal to clipboard with mouse
 
 # Thumbs: copy to system clipboard
 if-shell '[ -n "$SSH_CONNECTION" ]' \
