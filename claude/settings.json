@@ -6,6 +6,7 @@
     "pyright-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
+  "attribution": false,
   "permissions": {
     "allow": [
       "Read",
