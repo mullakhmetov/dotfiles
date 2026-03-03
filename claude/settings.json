@@ -6,7 +6,14 @@
     "pyright-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "attribution": false,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
   "permissions": {
     "allow": [
       "Read",
