@@ -104,3 +104,28 @@ git() {
 function ccc() {
     claude -p "/commit $*"
 }
+
+# Codex
+_mirai_codex_github_pat() {
+    local service="mirai-codex-github-pat"
+    local token
+
+    token="$(security find-generic-password -a "$USER" -s "$service" -w 2>/dev/null || security find-generic-password -s "$service" -w 2>/dev/null)" || {
+        print -u2 "Keychain item '$service' was not found."
+        print -u2 "Add it with: security add-generic-password -U -a \"$USER\" -s \"$service\" -w '<PAT>'"
+        return 1
+    }
+
+    print -r -- "$token"
+}
+
+codex() {
+    command codex -c 'mcp_servers.github.enabled=false' "$@"
+}
+
+cxm() {
+    local token
+
+    token="$(_mirai_codex_github_pat)" || return 1
+    GITHUB_PAT_TOKEN="$token" command codex -c 'mcp_servers.github.enabled=true' "$@"
+}
