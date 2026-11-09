@@ -24,6 +24,25 @@ Install missing tools and apply the configuration:
 bash install.sh --apply
 ```
 
+This command installs the `core` and `cli` groups from `install/packages.json`.
+Include the application selection with `--with-apps`:
+
+```sh
+bash install.sh --dry-run --with-apps
+bash install.sh --apply --with-apps
+```
+
+Preview the Omarchy ARM64 selection from macOS:
+
+```sh
+python3 -B install/packages.py --platform arch --arch aarch64 --group all
+```
+
+See [application choices and installation limits](APPS.md) before installing on Apple Silicon.
+The package commands require Python 3.
+They check architecture declarations and report missing packages.
+They do not configure account access, VPN routes, or NAS synchronization.
+
 The Arch installer performs a full system upgrade before it installs missing packages.
 Review the package transaction before accepting the pacman prompt.
 The macOS installer requires Homebrew.
@@ -97,6 +116,9 @@ python3 -m unittest discover -s tests -v
 ```
 
 The tests use temporary home directories.
-The installer preview test blocks package managers and network commands.
+The installer preview tests block package managers and network commands.
+The shell startup test selects the Linux configuration and excludes inherited shell settings.
+Package tests check architecture selection, failure reporting, and rejection of invalid 1Password signatures.
+These tests do not prove application behavior on an Omarchy installation.
 
 See [the Omarchy migration notes](MIGRATION.md) for the migration scope and remaining checks.

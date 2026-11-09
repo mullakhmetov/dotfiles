@@ -6,11 +6,11 @@ vim.keymap.set("n", "<leader>sv", function()
     dofile(vim.fn.stdpath("config") .. "/init.lua")
 end)
 
--- move highlighted with up & down with J & K 
+-- move highlighted with up & down with J & K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- takes line below and appends it to current line with space 
+-- takes line below and appends it to current line with space
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- keeps cursor in the middle while half-page jumping
@@ -48,4 +48,3 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- switch between buffers
 vim.keymap.set("n", "<leader>[", "<cmd>bprev<CR>")
 vim.keymap.set("n", "<leader>]", "<cmd>bnext<CR>")
-

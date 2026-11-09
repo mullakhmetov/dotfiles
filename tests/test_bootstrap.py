@@ -61,11 +61,14 @@ class BootstrapTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(list(self.home.iterdir()), [])
 
-    def test_new_shell_starts_without_optional_dependencies(self):
+    def test_linux_shell_starts_without_optional_dependencies(self):
         result = self.run_bootstrap("--apply")
         self.assertEqual(result.returncode, 0, result.stderr)
         env = {**self.env, "PATH": "/usr/bin:/bin", "TERM": "xterm-256color"}
-        shell = subprocess.run(["zsh", "-d", "-i", "-c", "print DOTFILES_OK"],
+        for name in ["ZSH", "ZSH_CUSTOM", "ZDOTDIR"]:
+            env.pop(name, None)
+        shell = subprocess.run(["zsh", "-d", "-f", "-i", "-c",
+                                'OSTYPE=linux-gnu; source "$HOME/.zshrc"; print DOTFILES_OK'],
                                env=env, text=True, capture_output=True)
         self.assertEqual(shell.returncode, 0, shell.stderr)
         self.assertEqual(shell.stderr, "")

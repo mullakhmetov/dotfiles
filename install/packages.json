@@ -1,0 +1,1206 @@
+[
+  {
+    "id": "git",
+    "title": "git",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "git"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "git"
+      ]
+    }
+  },
+  {
+    "id": "git-lfs",
+    "title": "git-lfs",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "git-lfs"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "git-lfs"
+      ]
+    }
+  },
+  {
+    "id": "curl",
+    "title": "curl",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "curl"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "curl"
+      ]
+    }
+  },
+  {
+    "id": "zsh",
+    "title": "zsh",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "zsh"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "zsh"
+      ]
+    }
+  },
+  {
+    "id": "tmux",
+    "title": "tmux",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "tmux"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "tmux"
+      ]
+    }
+  },
+  {
+    "id": "neovim",
+    "title": "neovim",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "neovim"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "neovim"
+      ]
+    }
+  },
+  {
+    "id": "fzf",
+    "title": "fzf",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "fzf"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "fzf"
+      ]
+    }
+  },
+  {
+    "id": "ripgrep",
+    "title": "ripgrep",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "ripgrep"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "ripgrep"
+      ]
+    }
+  },
+  {
+    "id": "fd",
+    "title": "fd",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "fd"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "fd"
+      ]
+    }
+  },
+  {
+    "id": "jq",
+    "title": "jq",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "jq"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "jq"
+      ]
+    }
+  },
+  {
+    "id": "difftastic",
+    "title": "difftastic",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "difftastic"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "difftastic"
+      ]
+    }
+  },
+  {
+    "id": "zoxide",
+    "title": "zoxide",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "zoxide"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "zoxide"
+      ]
+    }
+  },
+  {
+    "id": "lsd",
+    "title": "lsd",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "lsd"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "lsd"
+      ]
+    }
+  },
+  {
+    "id": "atuin",
+    "title": "atuin",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "atuin"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "atuin"
+      ]
+    }
+  },
+  {
+    "id": "node",
+    "title": "node",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "node"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "nodejs",
+        "npm"
+      ]
+    }
+  },
+  {
+    "id": "go",
+    "title": "go",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "go"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "go"
+      ]
+    }
+  },
+  {
+    "id": "uv",
+    "title": "uv",
+    "group": "core",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "uv"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "uv"
+      ]
+    }
+  },
+  {
+    "id": "build-tools",
+    "title": "Build and desktop dependencies",
+    "group": "core",
+    "macos": {
+      "method": "none",
+      "note": "Use the installed Xcode command-line tools."
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "base-devel",
+        "unzip",
+        "gnupg",
+        "wl-clipboard",
+        "xdg-utils"
+      ]
+    }
+  },
+  {
+    "id": "kubectl",
+    "title": "kubectl",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "kubernetes-cli"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "kubectl"
+      ]
+    }
+  },
+  {
+    "id": "helm",
+    "title": "helm",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "helm"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "helm"
+      ]
+    }
+  },
+  {
+    "id": "terraform",
+    "title": "terraform",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "hashicorp/tap/terraform"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "terraform"
+      ]
+    }
+  },
+  {
+    "id": "docker",
+    "title": "docker",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "docker",
+        "docker-compose"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "docker",
+        "docker-compose"
+      ]
+    }
+  },
+  {
+    "id": "ansible",
+    "title": "ansible",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "ansible"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "ansible"
+      ]
+    }
+  },
+  {
+    "id": "gh",
+    "title": "gh",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "gh"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "github-cli"
+      ]
+    }
+  },
+  {
+    "id": "grpcurl",
+    "title": "grpcurl",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "grpcurl"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "grpcurl"
+      ]
+    }
+  },
+  {
+    "id": "httpie",
+    "title": "httpie",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "httpie"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "httpie"
+      ]
+    }
+  },
+  {
+    "id": "postgresql-client",
+    "title": "postgresql-client",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "libpq"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "postgresql-libs"
+      ]
+    }
+  },
+  {
+    "id": "pgcli",
+    "title": "pgcli",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "pgcli"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "pgcli"
+      ]
+    }
+  },
+  {
+    "id": "pnpm",
+    "title": "pnpm",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "pnpm"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "pnpm"
+      ]
+    }
+  },
+  {
+    "id": "age",
+    "title": "age",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "age"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "age"
+      ]
+    }
+  },
+  {
+    "id": "autossh",
+    "title": "autossh",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "autossh"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "autossh"
+      ]
+    }
+  },
+  {
+    "id": "wget",
+    "title": "wget",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "wget"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "wget"
+      ]
+    }
+  },
+  {
+    "id": "tree",
+    "title": "tree",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "tree"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "tree"
+      ]
+    }
+  },
+  {
+    "id": "watch",
+    "title": "watch",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "watch"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "procps-ng"
+      ]
+    }
+  },
+  {
+    "id": "nmap",
+    "title": "nmap",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "nmap"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "nmap"
+      ]
+    }
+  },
+  {
+    "id": "mtr",
+    "title": "mtr",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "mtr"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "mtr"
+      ]
+    }
+  },
+  {
+    "id": "rsync",
+    "title": "rsync",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "rsync"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "rsync"
+      ]
+    }
+  },
+  {
+    "id": "gitleaks",
+    "title": "gitleaks",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "gitleaks"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "gitleaks"
+      ]
+    }
+  },
+  {
+    "id": "git-filter-repo",
+    "title": "git-filter-repo",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "git-filter-repo"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "git-filter-repo"
+      ]
+    }
+  },
+  {
+    "id": "ssh",
+    "title": "ssh",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "openssh"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "openssh"
+      ]
+    }
+  },
+  {
+    "id": "aws",
+    "title": "AWS CLI v2",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "awscli"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "aws-cli-v2",
+      "base": "aws-cli-v2"
+    }
+  },
+  {
+    "id": "aws-iam-authenticator",
+    "title": "AWS IAM Authenticator",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "aws-iam-authenticator"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "aws-iam-authenticator",
+      "base": "aws-iam-authenticator"
+    }
+  },
+  {
+    "id": "gcloud",
+    "title": "Google Cloud CLI",
+    "group": "cli",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "gcloud-cli"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "google-cloud-cli",
+      "base": "google-cloud-cli"
+    }
+  },
+  {
+    "id": "gsutil",
+    "title": "Google Cloud Storage CLI",
+    "group": "cli",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "gcloud-cli"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "google-cloud-cli-gsutil",
+      "base": "google-cloud-cli"
+    }
+  },
+  {
+    "id": "1password-cli",
+    "title": "1Password CLI",
+    "group": "cli",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "1password-cli"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "1password-cli",
+      "base": "1password-cli"
+    }
+  },
+  {
+    "id": "codex-cli",
+    "title": "Codex CLI",
+    "group": "cli",
+    "macos": {
+      "method": "script",
+      "url": "https://chatgpt.com/codex/install.sh",
+      "shell": "sh",
+      "sudo": false,
+      "command": "codex"
+    },
+    "arch": {
+      "method": "script",
+      "url": "https://chatgpt.com/codex/install.sh",
+      "shell": "sh",
+      "sudo": false,
+      "command": "codex"
+    }
+  },
+  {
+    "id": "claude-cli",
+    "title": "Claude Code CLI",
+    "group": "cli",
+    "macos": {
+      "method": "script",
+      "url": "https://claude.ai/install.sh",
+      "shell": "bash",
+      "sudo": false,
+      "command": "claude"
+    },
+    "arch": {
+      "method": "script",
+      "url": "https://claude.ai/install.sh",
+      "shell": "bash",
+      "sudo": false,
+      "command": "claude"
+    }
+  },
+  {
+    "id": "1password",
+    "title": "1Password",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "1password"
+      ]
+    },
+    "arch": {
+      "x86_64": {
+        "method": "aur",
+        "package": "1password",
+        "base": "1password"
+      },
+      "aarch64": {
+        "method": "onepassword",
+        "command": "1password"
+      }
+    }
+  },
+  {
+    "id": "discord",
+    "title": "Discord",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "discord"
+      ]
+    },
+    "arch": {
+      "x86_64": {
+        "method": "repo",
+        "packages": [
+          "discord"
+        ]
+      },
+      "aarch64": {
+        "method": "web",
+        "url": "https://discord.com/app",
+        "note": "The official Linux package does not establish ARM64 support. This installs a browser launcher."
+      }
+    }
+  },
+  {
+    "id": "telegram",
+    "title": "Telegram",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "telegram"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "telegram-desktop"
+      ]
+    }
+  },
+  {
+    "id": "v2rayn",
+    "title": "v2rayN (V2Box alternative)",
+    "group": "apps",
+    "macos": {
+      "method": "none",
+      "note": "Keep the existing V2Box app on macOS. This migration installs v2rayN only on Linux."
+    },
+    "arch": {
+      "method": "aur",
+      "package": "v2rayn-bin",
+      "base": "v2rayn-bin"
+    }
+  },
+  {
+    "id": "zen",
+    "title": "Zen Browser",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "zen"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "zen-browser-bin",
+      "base": "zen-browser-bin"
+    }
+  },
+  {
+    "id": "tailscale",
+    "title": "Tailscale",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "tailscale-app"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "tailscale"
+      ]
+    },
+    "note": "Enable tailscaled and sign in separately. The installer does not change routes."
+  },
+  {
+    "id": "sublime",
+    "title": "Sublime Text",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "sublime-text"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "sublime-text-4",
+      "base": "sublime-text-4"
+    }
+  },
+  {
+    "id": "spotify",
+    "title": "Spotify",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "spotify"
+      ]
+    },
+    "arch": {
+      "x86_64": {
+        "method": "aur",
+        "package": "spotify",
+        "base": "spotify"
+      },
+      "aarch64": {
+        "method": "web",
+        "url": "https://open.spotify.com/",
+        "note": "The desktop package is x86-only. Test DRM playback in your browser."
+      }
+    }
+  },
+  {
+    "id": "obsidian",
+    "title": "Obsidian",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "obsidian"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "obsidian-bin",
+      "base": "obsidian"
+    }
+  },
+  {
+    "id": "codex-app",
+    "title": "Codex desktop in ChatGPT",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "chatgpt"
+      ]
+    },
+    "arch": {
+      "method": "script",
+      "url": "https://persistent.oaistatic.com/codex-app-prod/linux/install-arch.sh",
+      "shell": "bash",
+      "sudo": true,
+      "command": "chatgpt"
+    }
+  },
+  {
+    "id": "claude-app",
+    "title": "Claude desktop",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "claude"
+      ]
+    },
+    "arch": {
+      "method": "web",
+      "url": "https://claude.ai/",
+      "note": "The official Linux desktop supports Debian and Ubuntu. On Omarchy, this installs browser access. Use claude-cli for local coding."
+    }
+  },
+  {
+    "id": "ghostty",
+    "title": "Ghostty",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "ghostty"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "ghostty"
+      ]
+    },
+    "note": "ARM64 repository availability needs a target check. If missing, review the explicit ghostty-source option."
+  },
+  {
+    "id": "herdr",
+    "title": "Herdr app",
+    "group": "apps",
+    "macos": {
+      "method": "script",
+      "url": "https://releases.herdr.dev/app/install.sh",
+      "shell": "sh",
+      "sudo": false,
+      "command": null
+    },
+    "arch": {
+      "method": "script",
+      "url": "https://releases.herdr.dev/app/install.sh",
+      "shell": "sh",
+      "sudo": false,
+      "command": null
+    }
+  },
+  {
+    "id": "chrome",
+    "title": "Google Chrome",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "google-chrome"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "google-chrome",
+      "base": "google-chrome"
+    }
+  },
+  {
+    "id": "ledger",
+    "title": "Ledger Wallet",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "ledger-wallet"
+      ]
+    },
+    "arch": {
+      "x86_64": {
+        "method": "aur",
+        "package": "ledger-live-bin",
+        "base": "ledger-live-bin"
+      },
+      "aarch64": {
+        "method": "unavailable",
+        "note": "Ledger Wallet has no verified official Linux ARM64 package. Keep macOS or mobile access."
+      }
+    }
+  },
+  {
+    "id": "lens",
+    "title": "Lens",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "lens"
+      ]
+    },
+    "arch": {
+      "x86_64": {
+        "method": "aur",
+        "package": "lens-bin",
+        "base": "lens-bin"
+      },
+      "aarch64": {
+        "method": "unavailable",
+        "note": "Lens supports Linux AMD64. Select k9s separately for a terminal alternative."
+      }
+    }
+  },
+  {
+    "id": "synology",
+    "title": "Synology access",
+    "group": "apps",
+    "macos": {
+      "method": "cask",
+      "packages": [
+        "synology-drive"
+      ]
+    },
+    "arch": {
+      "x86_64": {
+        "method": "aur",
+        "package": "synology-drive",
+        "base": "synology-drive"
+      },
+      "aarch64": {
+        "method": "repo",
+        "packages": [
+          "cifs-utils",
+          "gvfs-smb"
+        ],
+        "note": "These packages provide SMB access. They do not provide Synology Drive synchronization or offline copies."
+      }
+    }
+  },
+  {
+    "id": "k9s",
+    "title": "Kubernetes terminal interface",
+    "group": "optional",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "k9s"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "k9s"
+      ]
+    }
+  },
+  {
+    "id": "xray",
+    "title": "Xray",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "xray"
+      ]
+    },
+    "arch": {
+      "method": "aur",
+      "package": "xray-bin",
+      "base": "xray-bin"
+    }
+  },
+  {
+    "id": "sing-box",
+    "title": "sing-box",
+    "group": "cli",
+    "macos": {
+      "method": "brew",
+      "packages": [
+        "sing-box"
+      ]
+    },
+    "arch": {
+      "method": "repo",
+      "packages": [
+        "sing-box"
+      ]
+    }
+  },
+  {
+    "id": "copier",
+    "title": "Copier templates",
+    "group": "optional",
+    "macos": {
+      "method": "uv-tool",
+      "package": "copier"
+    },
+    "arch": {
+      "method": "uv-tool",
+      "package": "copier"
+    }
+  },
+  {
+    "id": "ghostty-source",
+    "title": "Ghostty development source build",
+    "group": "optional",
+    "macos": {
+      "method": "none",
+      "note": "Use the ghostty cask on macOS."
+    },
+    "arch": {
+      "method": "aur",
+      "package": "ghostty-git",
+      "base": "ghostty-git",
+      "note": "This builds the development revision. Review the PKGBUILD and build dependencies before accepting."
+    }
+  }
+]
