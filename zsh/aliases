@@ -6,7 +6,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 
 # LSD
-alias ls='lsd'
+command -v lsd &>/dev/null && alias ls='lsd'
 
 # tmux
 t() { tmux attach 2>/dev/null || tmux new-session -s main }
@@ -15,7 +15,10 @@ alias tp='tmux new-session -A -s prod'
 alias ta='tmux a'
 
 # fzf
-alias cf='cd $(fff)'
+cf() {
+    local directory
+    directory="$(fff)" && [[ -n "$directory" ]] && cd -- "$directory"
+}
 
 # neovim (only if installed)
 if command -v nvim &> /dev/null; then
@@ -32,3 +35,7 @@ alias gca='command git commit --amend'
 alias ga='command git amend'
 alias gd='command git diff'
 alias gph='command git poh'
+
+# ai
+alias cc='claude'
+alias cx='codex'

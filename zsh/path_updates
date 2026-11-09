@@ -1,41 +1,26 @@
-#!/bin/zsh
+path=("$HOME/.local/bin" "$HOME/.zsh/shell_scripts" $path)
+export PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}"
+[[ -d "$PYENV_ROOT/bin" ]] && path=("$PYENV_ROOT/bin" $path)
 
-BASE_DIR="$(dirname "$0")"
-directory=$(readlink ${BASE_DIR}/shell_scripts)
-# Add directory to PATH if not already added
-if [[ ":$PATH:" != *":$directory:"* ]]; then
-	export PATH="$directory:$PATH"
+if command -v pyenv &>/dev/null; then
+    pyenv() {
+        unfunction pyenv
+        eval "$(command pyenv init -)"
+        pyenv "$@"
+    }
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-
-# Lazy load pyenv for faster shell startup
-pyenv() {
-  unset -f pyenv
-  eval "$(command pyenv init -)"
-  pyenv "$@"
-}
-
-# Go
-export GOPATH=$HOME/Workspace/golang
-export GOBIN=$GOPATH/bin
-export GOPROXY=direct
+export GOPATH="${GOPATH:-$HOME/Workspace/golang}"
+export GOBIN="${GOBIN:-$GOPATH/bin}"
+export GOPROXY="${GOPROXY:-direct}"
 export GOTOOLCHAIN=auto
-if [[ "$(uname)" == "Darwin" ]]; then
-  export GOROOT="$(brew --prefix golang)/libexec"
-  export PATH="$PATH:$GOROOT/bin"
+path+=("$GOBIN")
+
+if [[ "$OSTYPE" == darwin* && -n "$HOMEBREW_PREFIX" ]]; then
+    for directory in "$HOMEBREW_PREFIX/opt/grep/libexec/gnubin" \
+        "$HOMEBREW_PREFIX/opt/libpq/bin" \
+        "$HOMEBREW_PREFIX/opt/mysql-client@8.0/bin"; do
+        [[ -d "$directory" ]] && path=("$directory" $path)
+    done
 fi
-export PATH="$PATH:$GOBIN"
-
-# Database clients (macOS Homebrew paths)
-if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-  export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
-fi
-
-# Local binaries
-export PATH="$HOME/.local/bin:$PATH"
-
-# zoxide (needs PATH fully set up first)
-command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
+export PATH

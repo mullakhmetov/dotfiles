@@ -1,3 +1,15 @@
 *.swp
 .DS_Store
 docs/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.local
+*.db
+*.db-*
+*.sqlite*
+atuin/key
+atuin/session
+atuin/host_id
+nvim/.netrwhist

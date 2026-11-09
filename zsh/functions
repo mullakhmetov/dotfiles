@@ -18,7 +18,11 @@ function pya() {
 }
 
 function ttl() {
-	sudo sysctl -w net.inet.ip.ttl=65
+    if [[ "$OSTYPE" == darwin* ]]; then
+        sudo sysctl -w net.inet.ip.ttl=65
+    else
+        sudo sysctl -w net.ipv4.ip_default_ttl=65
+    fi
 }
 
 tmux_fzf_new_window() {
@@ -36,7 +40,7 @@ SUBJECT="%s"
 FORMAT="$HASH $RELATIVE_TIME{$AUTHOR{$REFS $SUBJECT"
 
 pretty_git_log() {
-  command git log --graph --pretty="tformat:$FORMAT" $* |
+  command git log --graph --pretty="tformat:$FORMAT" "$@" |
   column -t -s '{' |
   less -XRS --quit-if-one-screen
 }
@@ -109,6 +113,15 @@ function ccc() {
 _mirai_codex_github_pat() {
     local service="mirai-codex-github-pat"
     local token
+
+    if [[ -n "$MIRAI_GITHUB_PAT_REF" ]] && command -v op &>/dev/null; then
+        command op read "$MIRAI_GITHUB_PAT_REF"
+        return $?
+    fi
+    if [[ "$OSTYPE" != darwin* ]]; then
+        print -u2 'Set MIRAI_GITHUB_PAT_REF to a 1Password secret reference in ~/.zshrc.local.'
+        return 1
+    fi
 
     token="$(security find-generic-password -a "$USER" -s "$service" -w 2>/dev/null || security find-generic-password -s "$service" -w 2>/dev/null)" || {
         print -u2 "Keychain item '$service' was not found."

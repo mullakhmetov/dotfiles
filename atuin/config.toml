@@ -1,0 +1,6 @@
+# Preserve the current Enter behavior and encrypted record synchronization.
+enter_accept = true
+secrets_filter = true
+
+[sync]
+records = true

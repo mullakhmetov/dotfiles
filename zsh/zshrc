@@ -1,22 +1,27 @@
-# Load: Configurations
-source $HOME/.zsh/config
+source "$HOME/.zsh/config"
+source "$HOME/.zsh/path_updates"
+source "$HOME/.zsh/plugins"
 
-# Load: Plugins
-source $HOME/.zsh/plugins
+if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
+    source "$ZSH/oh-my-zsh.sh"
+else
+    autoload -Uz compinit
+    compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
+    PROMPT='%n@%m:%~%# '
+fi
 
-# Load: OH-MY-ZSH
-source $ZSH/oh-my-zsh.sh
+source "$HOME/.zsh/aliases"
+source "$HOME/.zsh/functions"
 
-# Load: ALIASES
-source $HOME/.zsh/aliases
-
-# Load: FUNCTIONS
-source $HOME/.zsh/functions
-
-# Load: PATH updates
-source $HOME/.zsh/path_updates
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export LANG=en_US.UTF-8
+if command -v fzf &>/dev/null && _fzf_init="$(fzf --zsh 2>/dev/null)"; then
+    eval "$_fzf_init"
+elif [[ -r "$HOME/.fzf.zsh" ]]; then
+    source "$HOME/.fzf.zsh"
+fi
+unset _fzf_init
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 command -v atuin &>/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
+
+# Keep machine-specific settings outside Git.
+[[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+true

@@ -1,71 +1,28 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-REPO_URL="https://github.com/mullakhmetov/dotfiles.git"
-DOTFILES_DIR="$HOME/dotfiles"
-
-# Detect OS
-OS="$(uname -s)"
-case "$OS" in
-  Linux*)   PLATFORM="ubuntu" ;;
-  Darwin*)  PLATFORM="macos" ;;
-  *)        echo "Unsupported OS: $OS" && exit 1 ;;
-esac
-
-# Banner
-if [[ "$PLATFORM" == "macos" ]]; then
-  printf '\033[1;37m%s\033[0m\n' \
-    '        ##         ' \
-    '      ######       ' \
-    '      ######       ' \
-    ' ###########       ' \
-    '#############      ' \
-    '#################  ' \
-    '#################  ' \
-    '#################  ' \
-    '#################  ' \
-    ' ###############   ' \
-    '  #############    ' \
-    '    #########      '
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$DOTFILES_DIR/install/platform.sh"
+MODE=--dry-run
+WITH_CLAUDE=false
+for arg in "$@"; do
+    case "$arg" in
+        --apply|--dry-run) MODE="$arg" ;;
+        --with-claude) WITH_CLAUDE=true ;;
+        *) printf 'Unknown argument: %s\n' "$arg" >&2; exit 2 ;;
+    esac
+done
+PLATFORM="$(detect_platform)"
+printf 'Platform: %s\n' "$PLATFORM"
+if [[ "$MODE" == --apply ]]; then
+    bash "$DOTFILES_DIR/install/$PLATFORM.sh"
+    bash "$DOTFILES_DIR/install/plugins.sh"
 else
-  printf '\033[1;33m%s\033[0m\n' \
-    '    .--.     ' \
-    '   |o_o |    ' \
-    '   |:_/ |    ' \
-    '  //   \ \   ' \
-    ' (|     | )  ' \
-    "/'\_   _/\`\\ " \
-    '\___)=(___/  '
+    printf 'Package installer: %s\n' "$DOTFILES_DIR/install/$PLATFORM.sh"
+    printf 'No packages or plugins will change. Use --apply to install.\n'
 fi
-echo ""
-echo "==> Detected platform: $PLATFORM"
-
-# Ensure git is available
-if ! command -v git &>/dev/null; then
-  if [[ "$PLATFORM" == "ubuntu" ]]; then
-    sudo apt-get update -qq && sudo apt-get install -y git
-  else
-    echo "git not found. Install Xcode Command Line Tools: xcode-select --install"
-    exit 1
-  fi
-fi
-
-# Clone dotfiles
-if [[ -d "$DOTFILES_DIR" ]]; then
-  echo "==> Dotfiles already cloned at $DOTFILES_DIR, pulling latest"
-  git -C "$DOTFILES_DIR" pull --ff-only
+if "$WITH_CLAUDE"; then
+    bash "$DOTFILES_DIR/bootstrap.sh" "$MODE" --with-claude
 else
-  echo "==> Cloning dotfiles to $DOTFILES_DIR"
-  git clone "$REPO_URL" "$DOTFILES_DIR"
+    bash "$DOTFILES_DIR/bootstrap.sh" "$MODE"
 fi
-
-# Run platform-specific installer
-echo "==> Running $PLATFORM installer"
-bash "$DOTFILES_DIR/install/$PLATFORM.sh"
-
-# Symlink dotfiles
-echo "==> Running bootstrap"
-bash "$DOTFILES_DIR/bootstrap.sh"
-
-echo ""
-echo "==> All done! Start a new zsh session."
